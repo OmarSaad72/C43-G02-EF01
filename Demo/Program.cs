@@ -1,10 +1,17 @@
-﻿namespace Demo
+﻿using Demo.Context;
+using Microsoft.EntityFrameworkCore;
+
+namespace Demo
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            #region EF_Core
+            EnterPriseDbContext DbContext = new EnterPriseDbContext();
+            //DbContext.Database.EnsureCreated();
+            //DbContext.Database.Migrate();  //Apply Ups of All Migration{Not Apply}
+            #endregion
         }
     }
 }
